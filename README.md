@@ -5,7 +5,6 @@ This is a guide to complete the Bandit machine.
 [Bandit Machine](https://overthewire.org/wargames/bandit/)
 
 To connect to the box you need **ssh** installed.  
-If you have read the introduction to the machine we can start.
 
 ## Level 0
 
