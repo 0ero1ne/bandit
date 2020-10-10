@@ -19,15 +19,15 @@ using the password `bandit0`.
 We are inside the home directory of bandit0, to find the flag
 just `cat` the file `readme`.  
 
-``bandit0@bandit:~$ cat readme  
-boJ9jbbUNNfktd78OOpsqOltutMc3MY1``
+``bandit0@bandit:~$ cat readme``  
+``boJ9jbbUNNfktd78OOpsqOltutMc3MY1``
 
 ## Level 1 → Level 2
 
 There is a file named `-`, `cat` it using `./`.
 
-``bandit1@bandit:~$ cat ./-  
-CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9``
+``bandit1@bandit:~$ cat ./-``  
+``CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9``
 
 ## Level 2 → Level 3
 
