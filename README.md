@@ -1,4 +1,4 @@
 # Bandit - OverTheWire.com
 
 This is a markup formatting test.
-I'm testin via w3m.
+I'm testing via w3m.
