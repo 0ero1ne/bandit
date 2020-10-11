@@ -835,7 +835,7 @@ To do so just resize your terminal to 1 line and launch `ssh`.
 
 As you can see now you are inside more's visual mode.  
 Press `v` to open vi/vim. 
-Now do `ESCAPE` + `:` and write `set shell=/bin/bash`.  
+`ESCAPE` + `:` and write `set shell=/bin/bash`.  
 `ESCAPE` + `:` and write `shell` and press return.
 
 Here we go, now that you have a shell just `cat` the password.
