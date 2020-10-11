@@ -558,7 +558,8 @@ Copy that key and use it to connect to `bandit17`.
 
 Now you can cat the password for this level and won't need the sshkey anymore.
 
-## Level 18 → Level 19
+
+
 
 There are two files in the `HOME` directory: `passwords.new` and `passwords.old`.  
 Use the command `diff` to find the only different line, the second one it's the right one.
@@ -572,7 +573,7 @@ bandit17@bandit:~$ diff passwords.old passwords.new
 bandit17@bandit:~$
 ```
 
-## Level 19 → Level 20
+## Level 18 → Level 19
 
 To connect to `bandit19` you'll have to disable the pseudo terminal allocation using `ssh` with the flag `-T`.
 
@@ -589,7 +590,7 @@ cat readme
 IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 ```
 
-## Level 20 → Level 21
+## Level 19 → Level 20
 
 Sticky bit or SUID is our the next argument.  
 Inside the `HOME` folder there is a binary with `SUDO` permission.
@@ -614,7 +615,7 @@ GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 bandit19@bandit:~$
 ```
 
-## Level 21 → Level 22
+## Level 20 → Level 21
 
 We are going to use `netcat` to listen to a specific port and use `suconnect` to connect to.  
 There are different way to solve this, using `tmux` to split the pane in two or connect with
@@ -648,7 +649,7 @@ bandit20@bandit:~$                                      │bandit20@bandit:~$
 
 Use `CTRL` + `B` + `x` to and type `y` to kill each pane, then `exit`.
 
-## Level 22 → Level 23
+## Level 21 → Level 22
 
 Let's find out what is running with `cronjob` and how to use it.
 
@@ -682,7 +683,7 @@ Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 bandit21@bandit:~$
 ```
 
-## Level 23 → Level 24
+## Level 22 → Level 23
 
 The description for this level says you have to write your own script, but it won't be necessary.
 
@@ -722,7 +723,7 @@ jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 bandit22@bandit:~$
 ```
 
-## Level 24 → Level 25
+## Level 23 → Level 24
 
 
 
@@ -730,6 +731,7 @@ bandit22@bandit:~$
 
 ```
 
+## Level 23 → Level 24
 ## Level 25 → Level 26
 ## Level 26 → Level 27
 ## Level 27 → Level 28
