@@ -892,10 +892,103 @@ The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
 bandit27@bandit:/tmp/bandit27/repo$
 ```
 
-
 ## Level 27 → Level 28
+
+Same as above, create the folder, cd into it and clone the repo.
+
+```
+bandit28@bandit:~$ mkdir /tmp/bandit28; cd /tmp/bandit28
+bandit28@bandit:/tmp/bandit28$ git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+Cloning into 'repo'...
+Could not create directory '/home/bandit28/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit28/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit28-git@localhost's password:
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 9 (delta 2), reused 0 (delta 0)
+Receiving objects: 100% (9/9), 796 bytes | 0 bytes/s, done.
+Resolving deltas: 100% (2/2), done.
+bandit28@bandit:/tmp/bandit28$
+```
+
+`cd` into it and `cat` the `README`
+
+```
+bandit28@bandit:/tmp/bandit28$ cd repo
+bandit28@bandit:/tmp/bandit28/repo$ cat README.md
+# Bandit Notes
+Some notes for level29 of bandit.
+
+## credentials
+
+- username: bandit29
+- password: xxxxxxxxxx
+
+bandit28@bandit:/tmp/bandit28/repo$
+```
+
+Apparently the password is not here, let's have a look in the git-log.
+
+```
+bandit28@bandit:/tmp/bandit28/repo$ git log -s
+commit edd935d60906b33f0619605abd1689808ccdd5ee
+Author: Morla Porla <morla@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    fix info leak
+
+commit c086d11a00c0648d095d04c089786efef5e01264
+Author: Morla Porla <morla@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    add missing data
+
+commit de2ebe2d5fd1598cd547f4d56247e053be3fdc38
+Author: Ben Dover <noone@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    initial commit of README.md
+bandit28@bandit:/tmp/bandit28/repo$
+```
+
+Let's hard break to the previous commit and see if we can find something useful.  
+
+```
+bandit28@bandit:/tmp/bandit28/repo$ git reset --hard c086d11a00c0648d095d04c089786efef5e01264
+HEAD is now at c086d11 add missing data
+bandit28@bandit:/tmp/bandit28/repo$
+```
+
+Finally, `cat` the `README.md` file again.
+
+```
+bandit28@bandit:/tmp/bandit28/repo$ cat README.md
+# Bandit Notes
+Some notes for level29 of bandit.
+
+## credentials
+
+- username: bandit29
+- password: bbc96594b4e001778eee9975372716b2
+
+bandit28@bandit:/tmp/bandit28/repo$
+```
+
 ## Level 28 → Level 29
+
+
 ## Level 29 → Level 30
+
+
 ## Level 30 → Level 31
+
+
 ## Level 31 → Level 32
+
+
 ## Level 32 → Level 33
