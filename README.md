@@ -183,11 +183,90 @@ bandit12@bandit:/tmp/bandit12$
 The process will be the same until we will have an `ASCII` file.
 
 ```
-
+bandit12@bandit:/tmp/bandit12$ file data2.bin
+data2.bin: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/bandit12$ mv data2.bin{,.bz}; bzip2 -d data2.bin.bz
+bandit12@bandit:/tmp/bandit12$ ls -al
+total 844
+drwxr-sr-x    2 bandit12 root   4096 Oct 11 10:54 .
+drwxrws-wt 3733 root     root 847872 Oct 11 10:54 ..
+-rw-r--r--    1 bandit12 root    431 Oct 11 10:53 data2.bin
+-rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+bandit12@bandit:/tmp/bandit12$ mv data{2.bin,4.bin.gz}; gzip -d data4.bin.gz
+bandit12@bandit:/tmp/bandit12$ ls -al
+total 860
+drwxr-sr-x    2 bandit12 root   4096 Oct 11 10:57 .
+drwxrws-wt 3733 root     root 847872 Oct 11 10:57 ..
+-rw-r--r--    1 bandit12 root  20480 Oct 11 10:53 data4.bin
+-rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+bandit12@bandit:/tmp/bandit12$ file data4.bin
+data4.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/bandit12$ mv data4.bin{,.tar}; tar -xf data4.bin.tar
+bandit12@bandit:/tmp/bandit12$ ls -al
+total 872
+drwxr-sr-x    2 bandit12 root   4096 Oct 11 10:58 .
+drwxrws-wt 3733 root     root 847872 Oct 11 10:58 ..
+-rw-r--r--    1 bandit12 root  20480 Oct 11 10:53 data4.bin.tar
+-rw-r--r--    1 bandit12 root  10240 May  7 20:14 data5.bin
+-rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+bandit12@bandit:/tmp/bandit12$ file data5.bin
+data5.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/bandit12$ mv data5.bin{,.tar}; tar -xf data5.bin.tar
+bandit12@bandit:/tmp/bandit12$ ls -al
+total 876
+drwxr-sr-x    2 bandit12 root   4096 Oct 11 10:58 .
+drwxrws-wt 3733 root     root 847872 Oct 11 10:58 ..
+-rw-r--r--    1 bandit12 root  20480 Oct 11 10:53 data4.bin.tar
+-rw-r--r--    1 bandit12 root  10240 May  7 20:14 data5.bin.tar
+-rw-r--r--    1 bandit12 root    222 May  7 20:14 data6.bin
+-rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+bandit12@bandit:/tmp/bandit12$ file data6.bin
+data6.bin: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/bandit12$ mv data6.bin{,.bz}; bzip2 -d data6.bin.bz
+bandit12@bandit:/tmp/bandit12$ ls -al
+total 884
+drwxr-sr-x    2 bandit12 root   4096 Oct 11 10:59 .
+drwxrws-wt 3734 root     root 847872 Oct 11 11:00 ..
+-rw-r--r--    1 bandit12 root  20480 Oct 11 10:53 data4.bin.tar
+-rw-r--r--    1 bandit12 root  10240 May  7 20:14 data5.bin.tar
+-rw-r--r--    1 bandit12 root  10240 May  7 20:14 data6.bin
+-rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+bandit12@bandit:/tmp/bandit12$ file data6.bin
+data6.bin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/bandit12$ mv data6.bin{,.tar}; tar -xf data6.bin.tar
+bandit12@bandit:/tmp/bandit12$ ls -al
+total 888
+drwxr-sr-x    2 bandit12 root   4096 Oct 11 11:00 .
+drwxrws-wt 3735 root     root 847872 Oct 11 11:00 ..
+-rw-r--r--    1 bandit12 root  20480 Oct 11 10:53 data4.bin.tar
+-rw-r--r--    1 bandit12 root  10240 May  7 20:14 data5.bin.tar
+-rw-r--r--    1 bandit12 root  10240 May  7 20:14 data6.bin.tar
+-rw-r--r--    1 bandit12 root     79 May  7 20:14 data8.bin
+-rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+bandit12@bandit:/tmp/bandit12$ file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/bandit12$ mv data8.bin{,.gz}; gzip -d data8.bin.gz
+bandit12@bandit:/tmp/bandit12$ ls -al
+total 888
+drwxr-sr-x    2 bandit12 root   4096 Oct 11 11:01 .
+drwxrws-wt 3735 root     root 847872 Oct 11 11:01 ..
+-rw-r--r--    1 bandit12 root  20480 Oct 11 10:53 data4.bin.tar
+-rw-r--r--    1 bandit12 root  10240 May  7 20:14 data5.bin.tar
+-rw-r--r--    1 bandit12 root  10240 May  7 20:14 data6.bin.tar
+-rw-r--r--    1 bandit12 root     49 May  7 20:14 data8.bin
+-rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+bandit12@bandit:/tmp/bandit12$ file data8.bin
+data8.bin: ASCII text
+bandit12@bandit:/tmp/bandit12$ cat data8.bin
+The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+bandit12@bandit:/tmp/bandit12$
 ```
 
-
 ## Level 13 → Level 14
+
+
+
+
 ## Level 14 → Level 15
 ## Level 15 → Level 16
 ## Level 16 → Level 17
