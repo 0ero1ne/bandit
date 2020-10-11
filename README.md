@@ -141,7 +141,7 @@ The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 
 ## Level 12 → Level 13
 
-First we need to find a way to work on `data.txt` and because we have no permission in our `HOME` folder we have to make a new one inside `/tmp/`, `cd` into it and `cp` the file inside.
+First we need to find a way to work on `data.txt` and because we have no permissionis in our `HOME` folder we have to copy it into a new one, which is `/tmp/`, then, `cd` into it and `cp` the file inside.
 
 ```
 bandit12@bandit:~$ mkdir /tmp/bandit12
