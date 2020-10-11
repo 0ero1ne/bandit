@@ -838,7 +838,7 @@ Press `v` to open vi/vim.
 `ESCAPE` + `:` and write `set shell=/bin/bash`.  
 `ESCAPE` + `:` and write `shell` and press return.
 
-Here we go, now that you have a shell just `cat` the password.
+Now that you have a shell you can `cat` the password for `bandit26`.
 
 ```
 bandit26@bandit:~$ cat /etc/bandit_pass/bandit26
@@ -846,7 +846,22 @@ bandit26@bandit:~$ cat /etc/bandit_pass/bandit26
 bandit26@bandit:~$
 ```
 
+Finally you can use the binary `bandit27-do` to cat the password for `bandit27`.
+
+```
+bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
+3ba3118a22e93127a4ed485be72ef5ea
+bandit26@bandit:~$
+```
+
 ## Level 26 → Level 27
+
+Test
+
+```
+
+```
+
 ## Level 27 → Level 28
 ## Level 28 → Level 29
 ## Level 29 → Level 30
