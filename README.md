@@ -25,7 +25,7 @@ boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 
 ## Level 1 → Level 2
 
-There is a file named `-`, `cat` it using `./`.
+There is a file named `-` in the home folder, `cat` it using `./`.
 
 ```
 bandit1@bandit:~$ cat ./-
