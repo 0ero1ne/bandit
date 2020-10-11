@@ -282,7 +282,7 @@ The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 bandit12@bandit:/tmp/bandit12$
 ```
 
-If just want to skip the tedious process here's the whole list of commands in order.
+If you just want to skip the tedious process here's the whole list of commands in order.
 
 ```
 mkdir /tmp/bandit12
