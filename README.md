@@ -560,7 +560,7 @@ Now you can cat the password for this level and won't need the sshkey anymore.
 
 ## Level 18 → Level 19
 
-There are two files in the `HOME` directory: `passwords.new` and `passwords.old`.
+There are two files in the `HOME` directory: `passwords.new` and `passwords.old`.  
 Use the command `diff` to find the only different line, the second one it's the right one.
 
 ```
