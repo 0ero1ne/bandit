@@ -36,8 +36,8 @@ CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 
 The password for the next level is stored inside `spaces in this filename`.  
 To `cat` a file that has spaces in its name you can either enter the first characters
-of the nama, press `tab` and let BASH complete the name for you, or just type `\` at
-the end of each words.
+of the nama, press `tab` and let BASH complete the name for you, or just type `\` before any
+spaces.
 
 ```
 bandit2@bandit:~$ cat spaces\ in\ this\ filename
