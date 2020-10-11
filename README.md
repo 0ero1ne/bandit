@@ -81,9 +81,8 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ## Level 6 → Level 7
 
 This time we are going to do a more extended search since we don't know the exact path of the file.  
-Use `find` again filtering the `-size 33c`, `-user bandit7`, `-group bandit6`.
-Using `find` without `sudo` permissions can output some error messages, we want to redirect those using
-`2>/dev/null`, then just use `cat` as usual to output the content.
+Use `find` again filtering the `-size 33c`, `-user bandit7` and `-group bandit6`.  
+Executing the command without `sudo` permissions can output some error messages, we want to redirect those using `2>/dev/null`, then just use `cat` as usual to output the content.
 
 ```
 bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c -exec cat {} \; 2>/dev/null
