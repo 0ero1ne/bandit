@@ -636,7 +636,7 @@ On the right pane connect with the binary `suconnect` passing the port `32666`.
 
 `bandit20@bandit:~$ ./suconnect 32666`
 
-Go back on the left pane and paste `bandit20` password `GbKksEFF4yrVs6il55v6gwY5aVje5f0j`.  
+Go back on the left pane and paste bandit20's password `GbKksEFF4yrVs6il55v6gwY5aVje5f0j`.  
 It should look like this.
 
 ```
