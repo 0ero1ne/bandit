@@ -328,6 +328,8 @@ bandit14@bandit:~$
 ## Level 15 → Level 16
 
 Use `openssl` to connect to `localhost` on port `30001`.
+Paste the current level password `BfMYroe26WYalil77FoDi9qh59eK5xNr` to get the next password.
+
 
 ```
 bandit15@bandit:~$ openssl s_client -connect localhost:30001
