@@ -798,7 +798,22 @@ bandit23@bandit:/tmp/bandit23$
 
 ## Level 24 → Level 25
 
+We have to brute force a `xxxx` numbers pin to a local daemon listening on `30002`.  
+Let's make a folder inside `tmp` so we can create files.
 
+```
+bandit24@bandit:/tmp/bandit24$ mkdir /tmp/bandit24
+bandit24@bandit:/tmp/bandit24$ cd /tmp/bandit24
+bandit24@bandit:/tmp/bandit24$ 
+```
+
+Now we need to create the file with all the combination to brute force over the daemon.
+
+for x in $(echo {0000..9999}); do printf "UoMYTrfrBFHyQXmg6gzctqAwO^C1IohZ $x\n" >> b0; done
+
+```
+for x in $(echo {0000..9999}); do printf "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $x\n" >> b0; done
+```
 
 ## Level 25 → Level 26
 ## Level 26 → Level 27
