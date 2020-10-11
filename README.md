@@ -229,6 +229,9 @@ drwxrws-wt 3733 root     root 847872 Oct 11 10:58 ..
 -rw-r--r--    1 bandit12 root  10240 May  7 20:14 data5.bin.tar
 -rw-r--r--    1 bandit12 root    222 May  7 20:14 data6.bin
 -rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+```
+
+```
 bandit12@bandit:/tmp/bandit12$ file data6.bin
 data6.bin: bzip2 compressed data, block size = 900k
 bandit12@bandit:/tmp/bandit12$ mv data6.bin{,.bz}; bzip2 -d data6.bin.bz
@@ -240,6 +243,9 @@ drwxrws-wt 3734 root     root 847872 Oct 11 11:00 ..
 -rw-r--r--    1 bandit12 root  10240 May  7 20:14 data5.bin.tar
 -rw-r--r--    1 bandit12 root  10240 May  7 20:14 data6.bin
 -rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+```
+
+```
 bandit12@bandit:/tmp/bandit12$ file data6.bin
 data6.bin: POSIX tar archive (GNU)
 bandit12@bandit:/tmp/bandit12$ mv data6.bin{,.tar}; tar -xf data6.bin.tar
@@ -252,6 +258,9 @@ drwxrws-wt 3735 root     root 847872 Oct 11 11:00 ..
 -rw-r--r--    1 bandit12 root  10240 May  7 20:14 data6.bin.tar
 -rw-r--r--    1 bandit12 root     79 May  7 20:14 data8.bin
 -rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+```
+
+```
 bandit12@bandit:/tmp/bandit12$ file data8.bin
 data8.bin: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
 bandit12@bandit:/tmp/bandit12$ mv data8.bin{,.gz}; gzip -d data8.bin.gz
@@ -264,6 +273,9 @@ drwxrws-wt 3735 root     root 847872 Oct 11 11:01 ..
 -rw-r--r--    1 bandit12 root  10240 May  7 20:14 data6.bin.tar
 -rw-r--r--    1 bandit12 root     49 May  7 20:14 data8.bin
 -rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+```
+
+```
 bandit12@bandit:/tmp/bandit12$ file data8.bin
 data8.bin: ASCII text
 bandit12@bandit:/tmp/bandit12$ cat data8.bin
