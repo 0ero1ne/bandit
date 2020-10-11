@@ -846,6 +846,8 @@ bandit26@bandit:~$ cat /etc/bandit_pass/bandit26
 bandit26@bandit:~$
 ```
 
+## Level 26 → Level 27
+
 Finally you can use the binary `bandit27-do` to cat the password for `bandit27`.
 
 ```
@@ -854,7 +856,7 @@ bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
 bandit26@bandit:~$
 ```
 
-## Level 26 → Level 27
+## Level 27 → Level 28
 
 Make a new folder to clone the git-repo and cd into it.
 
@@ -892,7 +894,7 @@ The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
 bandit27@bandit:/tmp/bandit27/repo$
 ```
 
-## Level 27 → Level 28
+## Level 28 → Level 29
 
 Same as above, create the folder, cd into it and clone the repo.
 
@@ -979,14 +981,12 @@ Some notes for level29 of bandit.
 bandit28@bandit:/tmp/bandit28/repo$
 ```
 
-## Level 28 → Level 29
+## Level 29 → Level 30
 
 Test
 
 ```
 ```
-
-## Level 29 → Level 30
 
 
 ## Level 30 → Level 31
