@@ -46,7 +46,7 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
 ## Level 3 → Level 4
 
-In this one the we have to `cd` into `inhere` directory and an hidden file  
+In this one the we have to `cd` into `inhere` directory and an hidden file 
 named `.hidden` or simply `cat` from the HOME folder typing the path.
 
 ```
@@ -57,8 +57,8 @@ pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ## Level 4 → Level 5
 
 We are looking for a human-readble file, most likely a *ASCII* file.  
-Using `find` combined with `file` will output the type of each file we found,  
-then we can `grep ASCII` to parse only the file-type we are looking for and  
+Using `find` combined with `file` will output the type of each file we found, 
+then we can `grep ASCII` to parse only the file-type we are looking for and 
 pipe it to `cat` to see its content.
 This is a oneline solution but can be done in different steps.
 
