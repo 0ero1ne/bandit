@@ -11,7 +11,7 @@ To connect to the box you need `ssh` installed.
 The goal is pretty simple: connect to the machine as `bandit0`
 using the password `bandit0`.  
 
-``ssh bandit.labs.overthewire.org -u bandit0 -p 2220``
+``ssh bandit0@bandit.labs.overthewire.org -p 2220``
 
 ## Level 0 → Level 1
 
