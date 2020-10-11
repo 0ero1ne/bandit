@@ -327,9 +327,8 @@ bandit14@bandit:~$
 
 ## Level 15 → Level 16
 
-Use `openssl` to connect to `localhost` on port `30001`.
+Use `openssl` to connect to `localhost` on port `30001`.  
 Paste the current level password `BfMYroe26WYalil77FoDi9qh59eK5xNr` to get the next password.
-
 
 ```
 bandit15@bandit:~$ openssl s_client -connect localhost:30001
@@ -401,6 +400,11 @@ SSL-Session:
     Verify return code: 18 (self signed certificate)
     Extended master secret: yes
 ---
+```
+
+Paste the password.
+
+```
 BfMYroe26WYalil77FoDi9qh59eK5xNr
 Correct!
 cluFn7wTiGryunymYOu4RcffSxQluehd
@@ -502,6 +506,11 @@ SSL-Session:
     Verify return code: 18 (self signed certificate)
     Extended master secret: yes
 ---
+```
+
+Now paste the password.
+
+```
 cluFn7wTiGryunymYOu4RcffSxQluehd
 Correct!
 -----BEGIN RSA PRIVATE KEY-----
@@ -671,7 +680,7 @@ bandit21@bandit:~$
 
 ## Level 23 → Level 24
 
-The descirptio for this level requires you to write your own script, but, it won't be necessary.
+The description for this level requires you to write your own script, but, it won't be necessary.
 
 
 ```
