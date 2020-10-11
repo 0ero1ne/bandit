@@ -46,8 +46,8 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
 ## Level 3 → Level 4
 
-In this one the we have to `cd` into `inhere` and cat an hidden file 
-named `.hidden` or simply `cat` from the HOME folder typing the path.
+In this one the we have to `cd` into `inhere` and `cat` an hidden file named `.hidden`.  
+You can simply `cat` it from the `HOME` folder.
 
 ```
 bandit3@bandit:~$ cat inhere/.hidden
