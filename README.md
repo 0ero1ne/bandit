@@ -916,7 +916,7 @@ Resolving deltas: 100% (2/2), done.
 bandit28@bandit:/tmp/bandit28$
 ```
 
-`cd` into it and `cat` the `README`
+`cd` into it and `cat` the `README.md`
 
 ```
 bandit28@bandit:/tmp/bandit28$ cd repo
@@ -935,7 +935,7 @@ bandit28@bandit:/tmp/bandit28/repo$
 Apparently the password is not here, let's have a look in the git-log.
 
 ```
-bandit28@bandit:/tmp/bandit28/repo$ git log -s
+bandit28@bandit:/tmp/bandit28/repo$ git log
 commit edd935d60906b33f0619605abd1689808ccdd5ee
 Author: Morla Porla <morla@overthewire.org>
 Date:   Thu May 7 20:14:49 2020 +0200
@@ -956,7 +956,7 @@ Date:   Thu May 7 20:14:49 2020 +0200
 bandit28@bandit:/tmp/bandit28/repo$
 ```
 
-Let's hard break to the previous commit and see if we can find something useful.  
+Let's git reset to the previous commit and see if we can find something useful.  
 
 ```
 bandit28@bandit:/tmp/bandit28/repo$ git reset --hard c086d11a00c0648d095d04c089786efef5e01264
