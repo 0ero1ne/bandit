@@ -80,7 +80,8 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 
 ## Level 6 → Level 7
 
-This time we don't know where the file is so, we are going to do a more extended search.  
+This time we are going to do a more extended search since we don't know the exact path of the file that
+contains the password.  
 We do know though that size is `-size 33c`, user `-user bandit7` and `-group bandit6` own the file.
 Looking trough the root directory can output some error messages, we want to redirect those using
 `2>/dev/null`. Just use `cat` as usual to output the content.
@@ -92,7 +93,7 @@ HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 
 ## Level 7 → Level 8
 
-Using `grep` search for the `millionth` string inside `data.txt`.
+Using `grep` we search for the `millionth` string inside `data.txt`.
 
 ```
 bandit7@bandit:~$ grep "millionth" data.txt
