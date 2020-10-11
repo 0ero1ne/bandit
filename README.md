@@ -2,9 +2,9 @@
 
 This is a guide to complete the Bandit machine.
 
-[Bandit Machine](https://overthewire.org/wargames/bandit/)
+[Bandit Description](https://overthewire.org/wargames/bandit/)
 
-To connect to the box you need **ssh** installed.
+To connect to the box you need `ssh` installed.
 
 ## Level 0
 
@@ -80,14 +80,61 @@ find inhere/ -type f -perm -u-x -size 1033c -exec cat {} \;
 
 ## Level 6 → Level 7
 
+This time we don't know where the file is so, we are going to do a more extended search.  
+We do know though that size is `-size 33c`, user `-user bandit7` and `-group bandit6` own the file.
+Looking trough the root directory can output some error messages, we want to redirect those using
+`2>/dev/null`. Just use `cat` as usual to output the content.
 
-
+```
+bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c -exec cat {} \; 2>/dev/null
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+```
 
 ## Level 7 → Level 8
+
+Using `grep` search for the `millionth` string inside `data.txt`.
+
+```
+bandit7@bandit:~$ grep "millionth" data.txt
+millionth	cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+```
+
 ## Level 8 → Level 9
+
+To find the unique string inside `data.txt` just `sort` the file and pipe it into `uniq -u` to print only
+unique lines.
+
+```
+bandit8@bandit:~$ sort data.txt | uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+```
+
 ## Level 9 → Level 10
+
+The file `data.txt` is binary, to read its content we can use `strings` to print the strings of printable
+characters then we can `grep` the one that has multiple `==` in it.
+
+```
+bandit9@bandit:~$ strings data.txt | grep "=="
+========== the*2i"4
+========== password
+Z)========== is
+&========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+```
+
 ## Level 10 → Level 11
+
+Decode the base64 data inside the file `data.txt` using `base64`.
+
+```
+bandit10@bandit:~$ base64 -d data.txt
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+```
+
 ## Level 11 → Level 12
+
+
+
 ## Level 12 → Level 13
 ## Level 13 → Level 14
 ## Level 14 → Level 15
