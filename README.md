@@ -411,6 +411,10 @@ bandit15@bandit:~$
 
 ## Level 16 → Level 17
 
+Scan the `localhost` with `nmap` on port range `31000-32000`.  
+There are 5 open ports where we can connect to.  
+Try all 5 to see which one speaks `ssl` and will repond with an `RSA` key.  
+
 ```
 bandit16@bandit:~$ nmap localhost -p31000-32000
 
