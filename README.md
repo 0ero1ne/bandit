@@ -69,8 +69,7 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 
 ## Level 5 → Level 6
 
-Follwing the same concept as before we can use find, but, this time we are going to filter 
-permissions using `-perm -u-x` and the size `-size 1033c`.  
+Follwing the same concept as before we can use `find` but we are going to filter permissions using `-perm -u-x` and the size `-size 1033c`.  
 At the end just execute the `cat` command to output the content.  
 If we want to trim the output to have a cleaner output we can use `tr -d ' '`.
 
