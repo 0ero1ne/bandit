@@ -142,6 +142,44 @@ The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 
 ## Level 12 → Level 13
 
+First we need to find a way to work on `data.txt` and because we have no permission in our `HOME` folder we have to make a new one inside `/tmp/`, `cd` into it and `cp` the file inside.
+
+```
+bandit12@bandit:~$ mkdir /tmp/bandit12
+bandit12@bandit:~$ cd /tmp/bandit12
+bandit12@bandit:/tmp/bandit12$ cp ~/data.txt .
+bandit12@bandit:/tmp/bandit12$
+```
+
+Now let's reverse the hexdump into the actual file.
+**NOTE:** if you just execute `xxd` without redirecting you will see `data2.bin` in the output.
+
+```
+bandit12@bandit:/tmp/bandit12$ xxd -r data.txt > data2.bin
+```
+
+Let's find out what type of file is `data2.bin`.
+
+```
+bandit12@bandit:/tmp/bandit12$ file data2.bin
+data2.bin: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/bandit12$
+```
+
+Let's rename `data2.bin` into `data2.bin.gz` and extract it using `gzip`.
+
+```
+bandit12@bandit:/tmp/bandit12$ mv data2.bin{,.gz}; gzip -d data2.bin.gz
+bandit12@bandit:/tmp/bandit12$ ls -al
+total 844
+drwxr-sr-x    2 bandit12 root   4096 Oct 11 10:49 .
+drwxrws-wt 3731 root     root 847872 Oct 11 10:49 ..
+-rw-r--r--    1 bandit12 root    573 Oct 11 10:43 data2.bin
+-rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+bandit12@bandit:/tmp/bandit12$
+```
+
+
 
 
 ## Level 13 → Level 14
