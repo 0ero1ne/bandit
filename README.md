@@ -580,7 +580,7 @@ To connect to `bandit19` you'll have to disable the pseudo terminal allocation u
 + elliot ~/Coding/overthewire → ssh bandit18@bandit.labs.overthewire.org -p 2220 -T
 ```
 
-After the login message you'll have an empty prompt, just list the file and cat the `readme`.
+After the login message you'll have an empty prompt, just `ls` and cat the `readme`.
 
 ```
 ls
