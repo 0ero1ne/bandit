@@ -624,7 +624,7 @@ I'll demonstrate using `tmux`.
 bandit20@bandit:~$ tmux
 ```
 
-When `TMUX` is opened press `CTRL` + `B` + `%` the spli the pane in two.
+When `TMUX` is opened press `CTRL` + `B` + `%` the spli the pane in two.  
 To move between panes use `CTRL` + `B` + `o`.  
 
 On the left pane use `netcat` to listen on port `32666`.
