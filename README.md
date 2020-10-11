@@ -635,10 +635,89 @@ bandit20@bandit:~$                                      │bandit20@bandit:~$
 
 Use `CTRL` + `B` + `x` to and type `y` to kill each pane, then `exit`.
 
-
 ## Level 22 → Level 23
+
+Let's find out what is running with `cronjob` and how to use it.
+
+```
+bandit21@bandit:~$ ls -al /etc/cron.d/
+total 36
+drwxr-xr-x  2 root root 4096 Jul 11 15:56 .
+drwxr-xr-x 87 root root 4096 May 14 09:41 ..
+-rw-r--r--  1 root root   62 May 14 13:40 cronjob_bandit15_root
+-rw-r--r--  1 root root   62 Jul 11 15:56 cronjob_bandit17_root
+-rw-r--r--  1 root root  120 May  7 20:14 cronjob_bandit22
+-rw-r--r--  1 root root  122 May  7 20:14 cronjob_bandit23
+-rw-r--r--  1 root root  120 May 14 09:41 cronjob_bandit24
+-rw-r--r--  1 root root   62 May 14 14:04 cronjob_bandit25_root
+-rw-r--r--  1 root root  102 Oct  7  2017 .placeholder
+bandit21@bandit:~$ cat /etc/cron.d/cronjob_bandit22
+@reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+bandit21@bandit:~$ cat /usr/bin/cronjob_bandit22.sh
+#!/bin/bash
+chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+```
+
+Looks like the script writes on a file in the `tmp` folder, just `cat` it
+and get the npassword for the next level.
+
+```
+bandit21@bandit:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+bandit21@bandit:~$
+```
+
 ## Level 23 → Level 24
+
+The descirptio for this level requires you to write your own script, but, it won't be necessary.
+
+
+```
+bandit22@bandit:~$ ls -al /etc/cron.d/
+total 36
+drwxr-xr-x  2 root root 4096 Jul 11 15:56 .
+drwxr-xr-x 87 root root 4096 May 14 09:41 ..
+-rw-r--r--  1 root root   62 May 14 13:40 cronjob_bandit15_root
+-rw-r--r--  1 root root   62 Jul 11 15:56 cronjob_bandit17_root
+-rw-r--r--  1 root root  120 May  7 20:14 cronjob_bandit22
+-rw-r--r--  1 root root  122 May  7 20:14 cronjob_bandit23
+-rw-r--r--  1 root root  120 May 14 09:41 cronjob_bandit24
+-rw-r--r--  1 root root   62 May 14 14:04 cronjob_bandit25_root
+-rw-r--r--  1 root root  102 Oct  7  2017 .placeholder
+bandit22@bandit:~$ cat /etc/cron.d/cronjob_bandit23
+@reboot bandit23 /usr/bin/cronjob_bandit23.sh &> /dev/null
+* * * * * bandit23 /usr/bin/cronjob_bandit23.sh &> /dev/null
+bandit22@bandit:~$ cat /usr/bin/cronjob_bandit23.sh
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+bandit22@bandit:~$
+```
+
+All we have to do now is copy the commands chain of `mytarget` and use the output to
+find the right folder inside `tmp`, then cat the whole `PATH` to show the content.
+
+```
+bandit22@bandit:~$ cat /tmp/$(echo I am user bandit23 | md5sum | cut -d ' ' -f 1)
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+bandit22@bandit:~$
+```
+
 ## Level 24 → Level 25
+
+
+
+```
+
+```
+
 ## Level 25 → Level 26
 ## Level 26 → Level 27
 ## Level 27 → Level 28
