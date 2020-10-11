@@ -131,9 +131,20 @@ The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 
 ## Level 11 → Level 12
 
+Simple ROT13 decode.  
+To solve this you can either use a website or the `tr` command.  
+[Decode ROT13](http://www.decode.org/)
+For the sake of it we are going to use the CLI.
 
+```
+bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+```
 
 ## Level 12 → Level 13
+
+
+
 ## Level 13 → Level 14
 ## Level 14 → Level 15
 ## Level 15 → Level 16
