@@ -110,8 +110,7 @@ UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 
 ## Level 9 → Level 10
 
-The file `data.txt` is binary, to read its content we can use `strings` to print the strings of printable
-characters then we can `grep` the one that has multiple `==` in it.
+The file `data.txt` contains just few human-readble strings, to read those we can use `strings` to print the strings of printable characters then we can `grep` the one that has multiple `==` in it.
 
 ```
 bandit9@bandit:~$ strings data.txt | grep "=="
