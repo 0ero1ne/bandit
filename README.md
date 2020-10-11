@@ -563,14 +563,54 @@ bandit17@bandit:~$
 
 ## Level 19 → Level 20
 
-
+To connect to `bandit19` you'll have to disable the pseudo terminal allocation using `ssh` with the flag `-T`.
 
 ```
++ elliot ~/Coding/overthewire → ssh bandit18@bandit.labs.overthewire.org -p 2220 -T
+```
 
+After the login message you'll have an empty prompt, just list the file and cat the `readme`.
+
+```
+ls
+readme
+cat readme
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 ```
 
 ## Level 20 → Level 21
+
+Sticky bit or SUID is our the next argument.  
+Inside the `HOME` folder there is a binary with `SUDO` permission.
+
+```
+bandit19@bandit:~$ ls -al
+total 28
+drwxr-xr-x  2 root     root     4096 May  7 20:14 .
+drwxr-xr-x 41 root     root     4096 May  7 20:14 ..
+-rwsr-x---  1 bandit20 bandit19 7296 May  7 20:14 bandit20-do
+-rw-r--r--  1 root     root      220 May 15  2017 .bash_logout
+-rw-r--r--  1 root     root     3526 May 15  2017 .bashrc
+-rw-r--r--  1 root     root      675 May 15  2017 .profile
+```
+
+As you can see the `s` instead of `x` in the user column.  
+We can execute a command with `SUDO` permission via that binary and get the next password.
+
+```
+bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+bandit19@bandit:~$
+```
+
 ## Level 21 → Level 22
+
+
+
+```
+
+```
+
 ## Level 22 → Level 23
 ## Level 23 → Level 24
 ## Level 24 → Level 25
