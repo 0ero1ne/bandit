@@ -827,8 +827,23 @@ bandit24@bandit:/tmp/bandit24$
 
 ## Level 25 → Level 26
 
+After connecting to `bandit25` we are going to use the `sshkey` for `bandit26`.  
+Before it we need to force `more` to split the banner into different lines.  
+To do so just resize your terminal to 1 line and launch `ssh`.
+
+`bandit25@bandit:~$ ssh -i bandit26.sshkey bandit26@localhost`
+
+As you can see now you are inside more's visual mode.  
+Press `v` to open vi/vim. 
+Now do `ESCAPE` + `:` and write `set shell=/bin/bash`.  
+`ESCAPE` + `:` and write `shell` and press return.
+
+Here we go, now that you have a shell just `cat` the password.
 
 ```
+bandit26@bandit:~$ cat /etc/bandit_pass/bandit26
+5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+bandit26@bandit:~$
 ```
 
 ## Level 26 → Level 27
