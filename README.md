@@ -71,11 +71,12 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 
 Follwing the same concept as before we can use find, but, this time we are going to filter 
 permissions using `-perm -u-x` and the size `-size 1033c`.  
-At the end just execute the `cat` command to output the content.
-
+At the end just execute the `cat` command to output the content.  
+If we want to trim the output to have a cleaner output we can use `tr -d ' '`.
 
 ```
-find inhere/ -type f -perm -u-x -size 1033c -exec cat {} \;
+bandit5@bandit:~$ find inhere/ -type f -perm -u-x -size 1033c -exec cat {} \; | tr -d ' '
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ```
 
 ## Level 6 → Level 7
