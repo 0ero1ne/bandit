@@ -616,6 +616,7 @@ bandit19@bandit:~$
 
 ## Level 21 → Level 22
 
+We are going to use `netcat` to listen to a specific port and use `suconnect` to connect to.  
 There are different way to solve this, using `tmux` to split the pane in two or connect with
 two instances of `SSH`.
 I'll demonstrate using `tmux`.
@@ -631,7 +632,7 @@ On the left pane use `netcat` to listen on port `32666`.
 
 `bandit20@bandit:~$ nc -l -p 32666`
 
-On the right pane connect with the binary inside `HOME`.
+On the right pane connect with the binary `suconnect` passing the port `32666`.
 
 `bandit20@bandit:~$ ./suconnect 32666`
 
