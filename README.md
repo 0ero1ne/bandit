@@ -302,12 +302,116 @@ cat data8.bin
 
 ## Level 13 → Level 14
 
+In the `HOME` folder there is a sshkey file that can be use to login into `bandit14`.
+Aftet that `cat` the password from `/etc/bandit_pass/bandit14`.
 
-
+```
+bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost
+bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+bandit14@bandit:~$
+```
 
 ## Level 14 → Level 15
+
+Simply `nc` on the `localhost` on port `30000` and paste the password of `bandit14`.
+
+```
+bandit14@bandit:~$ nc localhost 30000
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+bandit14@bandit:~$
+```
+
 ## Level 15 → Level 16
+
+Use `openssl` to connect to `localhost` on port `30001`.
+
+```
+bandit15@bandit:~$ openssl s_client -connect localhost:30001
+CONNECTED(00000003)
+depth=0 CN = localhost
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = localhost
+verify return:1
+---
+Certificate chain
+ 0 s:/CN=localhost
+   i:/CN=localhost
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIICBjCCAW+gAwIBAgIEDU18oTANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDDAls
+b2NhbGhvc3QwHhcNMjAwNTA3MTgxNTQzWhcNMjEwNTA3MTgxNTQzWjAUMRIwEAYD
+VQQDDAlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAK3CPNFR
+FEypcqUa8NslmIMWl9xq53Cwhs/fvYHAvauyfE3uDVyyX79Z34Tkot6YflAoufnS
++puh2Kgq7aDaF+xhE+FPcz1JE0C2bflGfEtx4l3qy79SRpLiZ7eio8NPasvduG5e
+pkuHefwI4c7GS6Y7OTz/6IpxqXBzv3c+x93TAgMBAAGjZTBjMBQGA1UdEQQNMAuC
+CWxvY2FsaG9zdDBLBglghkgBhvhCAQ0EPhY8QXV0b21hdGljYWxseSBnZW5lcmF0
+ZWQgYnkgTmNhdC4gU2VlIGh0dHBzOi8vbm1hcC5vcmcvbmNhdC8uMA0GCSqGSIb3
+DQEBBQUAA4GBAC9uy1rF2U/OSBXbQJYuPuzT5mYwcjEEV0XwyiX1MFZbKUlyFZUw
+rq+P1HfFp+BSODtk6tHM9bTz+p2OJRXuELG0ly8+Nf/hO/mYS1i5Ekzv4PL9hO8q
+PfmDXTHs23Tc7ctLqPRj4/4qxw6RF4SM+uxkAuHgT/NDW1LphxkJlKGn
+-----END CERTIFICATE-----
+subject=/CN=localhost
+issuer=/CN=localhost
+---
+No client certificate CA names sent
+Peer signing digest: SHA512
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 1019 bytes and written 269 bytes
+Verification error: self signed certificate
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 1024 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: E46B506F1287D1627B998D88B2F0A59CC73358550D7CB89C6C8FB1E28B8F7DE9
+    Session-ID-ctx:
+    Master-Key: 361B5CAB8B612A39D7A736C1A6F4286AA298FA4663EBF988037C30D736B5E9DA48C80F6EB5A70DE3DD8B066F89DFB1D8
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - aa 02 e6 3a 2e 0b c8 5d-6f 54 4a 1b 5a e0 2c 0e   ...:...]oTJ.Z.,.
+    0010 - fb 82 db 09 48 99 33 46-8f 92 f0 0c bb bc 6f 20   ....H.3F......o
+    0020 - 3d a2 1f 9b 50 f3 81 28-79 6f cd 59 32 b4 18 cf   =...P..(yo.Y2...
+    0030 - 36 19 c6 05 7a e1 2d 55-b0 e0 46 70 3f 90 af af   6...z.-U..Fp?...
+    0040 - f5 3b b4 ae 0e 6a ee e7-26 ab 08 50 36 80 e1 73   .;...j..&..P6..s
+    0050 - ee 40 04 73 05 c3 5d 96-c2 42 9b bf 5f ef a8 23   .@.s..]..B.._..#
+    0060 - d9 e5 55 6c 80 cb c8 98-d6 30 02 f2 34 db 83 f1   ..Ul.....0..4...
+    0070 - 34 d0 bc cc ab bd 98 34-d7 e7 37 5f 5e c3 0a 8a   4......4..7_^...
+    0080 - 75 84 0f 7e 76 40 c0 f2-fe 00 c9 bb 15 57 8c 4d   u..~v@.......W.M
+    0090 - fa 42 14 7e 9e d9 c7 92-b9 0b 20 d4 5e fd a7 84   .B.~...... .^...
+
+    Start Time: 1602412129
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self signed certificate)
+    Extended master secret: yes
+---
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+Correct!
+cluFn7wTiGryunymYOu4RcffSxQluehd
+
+closed
+bandit15@bandit:~$
+```
+
 ## Level 16 → Level 17
+
+
+
+
 ## Level 17 → Level 18
 ## Level 18 → Level 19
 ## Level 19 → Level 20
