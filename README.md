@@ -618,7 +618,7 @@ bandit19@bandit:~$
 
 We are going to use `netcat` to listen to a specific port and use `suconnect` to connect to.  
 There are different way to solve this, using `tmux` to split the pane in two or connect with
-two instances of `SSH`.
+two instances of `SSH`.  
 I'll demonstrate using `tmux`.
 
 ```
