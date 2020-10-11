@@ -1,4 +1,4 @@
-# Bandit - OverTheWire.com
+# Bandit - OverTheWire.org
 
 This is a guide to complete the Bandit machine.
 
