@@ -605,11 +605,36 @@ bandit19@bandit:~$
 
 ## Level 21 → Level 22
 
-
+There are different way to solve this, using `tmux` to split the pane in two or connect with
+two instances of `SSH`, I'm gonna demostrate with `tmux`.
 
 ```
+bandit20@bandit:~$ tmux
+```
+
+When `TMUX` is opened press `CTRL` + `B` + `%` the spli the pane in two.
+To move between panes use `CTRL` + `B` + `o`.  
+
+On the left pane use `netcat` to listen on port `32666`.
+
+`bandit20@bandit:~$ nc -l -p 32666`
+
+On the right pane connect with the binary inside `HOME`.
+
+`bandit20@bandit:~$ ./suconnect 32666`
+
+Go back on the left pane and paste `bandit20` password `GbKksEFF4yrVs6il55v6gwY5aVje5f0j`.  
+It should look like this.
 
 ```
+bandit20@bandit:~$ nc -l -p 32666                       │bandit20@bandit:~$ ./suconnect 32666
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j                        │Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr                        │Password matches, sending next password
+bandit20@bandit:~$                                      │bandit20@bandit:~$
+```
+
+Use `CTRL` + `B` + `x` to and type `y` to kill each pane, then `exit`.
+
 
 ## Level 22 → Level 23
 ## Level 23 → Level 24
