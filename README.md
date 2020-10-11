@@ -132,8 +132,7 @@ The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 ## Level 11 → Level 12
 
 Simple ROT13 decode.  
-To solve this you can either use a website or the `tr` command.  
-[Decode ROT13](http://www.decode.org/)
+To solve this you can either use [Decode ROT13](http://www.decode.org/) or the `tr` command.  
 For the sake of it we are going to use the CLI.
 
 ```
