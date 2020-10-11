@@ -617,7 +617,8 @@ bandit19@bandit:~$
 ## Level 21 → Level 22
 
 There are different way to solve this, using `tmux` to split the pane in two or connect with
-two instances of `SSH`, I'm gonna demostrate with `tmux`.
+two instances of `SSH`.
+I'll demonstrate using `tmux`.
 
 ```
 bandit20@bandit:~$ tmux
