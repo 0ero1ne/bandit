@@ -833,8 +833,8 @@ To do so just resize your terminal to 1 line and launch `ssh`.
 
 `bandit25@bandit:~$ ssh -i bandit26.sshkey bandit26@localhost`
 
-As you can see now you are inside more's visual mode.  
-Press `v` to open vi/vim. 
+We are in more's visual mode. Press `v` to open vi/vim. 
+
 `ESCAPE` + `:` and write `set shell=/bin/bash`.  
 `ESCAPE` + `:` and write `shell` and press return.
 
