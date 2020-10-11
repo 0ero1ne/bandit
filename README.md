@@ -57,9 +57,8 @@ pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ## Level 4 → Level 5
 
 We are looking for a human-readble file, most likely a ASCII file.  
-Using `find` combined with `file` will output the type of each file we found, 
-then we can `grep ASCII` to parse only the file-type we are looking for and 
-pipe it to `cat` to see its content.  
+Using `find` combined with `file` allow us to see each file's type.  
+Then we can `grep ASCII` to parse only the file-type we are looking for and pipe it to `cat` to output its content.  
 This is a oneline solution but can be done in different steps.
 
 ```
