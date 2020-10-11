@@ -192,6 +192,9 @@ drwxr-sr-x    2 bandit12 root   4096 Oct 11 10:54 .
 drwxrws-wt 3733 root     root 847872 Oct 11 10:54 ..
 -rw-r--r--    1 bandit12 root    431 Oct 11 10:53 data2.bin
 -rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+```
+
+```
 bandit12@bandit:/tmp/bandit12$ mv data{2.bin,4.bin.gz}; gzip -d data4.bin.gz
 bandit12@bandit:/tmp/bandit12$ ls -al
 total 860
@@ -199,6 +202,9 @@ drwxr-sr-x    2 bandit12 root   4096 Oct 11 10:57 .
 drwxrws-wt 3733 root     root 847872 Oct 11 10:57 ..
 -rw-r--r--    1 bandit12 root  20480 Oct 11 10:53 data4.bin
 -rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+```
+
+```
 bandit12@bandit:/tmp/bandit12$ file data4.bin
 data4.bin: POSIX tar archive (GNU)
 bandit12@bandit:/tmp/bandit12$ mv data4.bin{,.tar}; tar -xf data4.bin.tar
@@ -209,6 +215,9 @@ drwxrws-wt 3733 root     root 847872 Oct 11 10:58 ..
 -rw-r--r--    1 bandit12 root  20480 Oct 11 10:53 data4.bin.tar
 -rw-r--r--    1 bandit12 root  10240 May  7 20:14 data5.bin
 -rw-r-----    1 bandit12 root   2582 Oct 11 10:42 data.txt
+```
+
+```
 bandit12@bandit:/tmp/bandit12$ file data5.bin
 data5.bin: POSIX tar archive (GNU)
 bandit12@bandit:/tmp/bandit12$ mv data5.bin{,.tar}; tar -xf data5.bin.tar
