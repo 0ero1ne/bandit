@@ -290,30 +290,14 @@ mkdir /tmp/bandit12
 cd /tmp/bandit12
 cp ~/data.txt .
 xxd -r data.txt > data2.bin
-file data2.bin
 mv data2.bin{,.gz}; gzip -d data2.bin.gz
-ls -al
-file data2.bin
 mv data2.bin{,.bz}; bzip2 -d data2.bin.bz
-ls -al
 mv data{2.bin,4.bin.gz}; gzip -d data4.bin.gz
-ls -al
-file data4.bin
 mv data4.bin{,.tar}; tar -xf data4.bin.tar
-ls -al
-file data5.bin
 mv data5.bin{,.tar}; tar -xf data5.bin.tar
-ls -al
-file data6.bin
 mv data6.bin{,.bz}; bzip2 -d data6.bin.bz
-ls -al
-file data6.bin
 mv data6.bin{,.tar}; tar -xf data6.bin.tar
-ls -al
-file data8.bin
 mv data8.bin{,.gz}; gzip -d data8.bin.gz
-ls -al
-file data8.bin
 cat data8.bin
 ```
 
