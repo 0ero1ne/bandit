@@ -788,9 +788,18 @@ mkdir /tmp/bandit24
 cat /etc/bandit_pass/bandit24 > /tmp/bandit24/pass
 ```
 
+Copy `reveal.sh` into `/var/spool/bandit25/`, then wait for the password to pop inside `/tmp/bandit24/pass`.
 
+```
+bandit23@bandit:/tmp/bandit23$ cat /tmp/bandit24/pass
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+bandit23@bandit:/tmp/bandit23$
+```
 
 ## Level 24 → Level 25
+
+
+
 ## Level 25 → Level 26
 ## Level 26 → Level 27
 ## Level 27 → Level 28
