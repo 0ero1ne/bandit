@@ -436,6 +436,8 @@ PORT      STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds
 ```
 
+Connect using `openssl` on port `31790`.
+
 ```
 bandit16@bandit:~$ openssl s_client -connect localhost:31790
 CONNECTED(00000003)
