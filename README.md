@@ -807,7 +807,7 @@ bandit24@bandit:/tmp/bandit24$ cd /tmp/bandit24
 bandit24@bandit:/tmp/bandit24$ 
 ```
 
-Now we need to create the file with all the combination to brute force over the daemon.
+Now we need to create the file with all the combinations.
 
 `for x in $(echo {0000..9999}); do printf "UoMYTrfrBFHyQXmg6gzctqAwO^C1IohZ $x\n" >> b0; done`
 
