@@ -156,6 +156,7 @@ Now let's reverse the hexdump into the actual file.
 
 ```
 bandit12@bandit:/tmp/bandit12$ xxd -r data.txt > data2.bin
+bandit12@bandit:/tmp/bandit12$
 ```
 
 Let's find out what type of file is `data2.bin`.
@@ -179,7 +180,11 @@ drwxrws-wt 3731 root     root 847872 Oct 11 10:49 ..
 bandit12@bandit:/tmp/bandit12$
 ```
 
+The process will be the same until we will have an `ASCII` file.
 
+```
+
+```
 
 
 ## Level 13 → Level 14
