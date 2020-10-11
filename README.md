@@ -674,7 +674,7 @@ cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 ```
 
 Looks like the script writes on a file in the `tmp` folder, just `cat` it
-and get the npassword for the next level.
+and get the password for the next level.
 
 ```
 bandit21@bandit:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
