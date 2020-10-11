@@ -413,7 +413,7 @@ bandit15@bandit:~$
 
 Scan the `localhost` with `nmap` on port range `31000-32000`.  
 There are 5 open ports where we can connect to.  
-Try all 5 to see which one speaks `ssl` and will repond with an `RSA` key.  
+Try all 5 to see which one speaks `ssl` and will repond with a `RSA` key.  
 
 ```
 bandit16@bandit:~$ nmap localhost -p31000-32000
@@ -537,10 +537,21 @@ bandit16@bandit:~$
 
 ```
 
-
-
 ## Level 17 → Level 18
+
+Copy that key and use it to connect to `bandit17`.
+
+```
++ elliot ~/Coding/overthewire → ssh -i key17 bandit17@bandit.labs.overthewire.org -p 2220
+```
+
+Now you can cat the password for this level and won't need the sshkey anymore.
+
 ## Level 18 → Level 19
+
+
+
+
 ## Level 19 → Level 20
 ## Level 20 → Level 21
 ## Level 21 → Level 22
