@@ -46,7 +46,7 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
 ## Level 3 → Level 4
 
-In this one the we have to `cd` into `inhere` directory and an hidden file 
+In this one the we have to `cd` into `inhere` and cat an hidden file 
 named `.hidden` or simply `cat` from the HOME folder typing the path.
 
 ```
