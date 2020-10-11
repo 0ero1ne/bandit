@@ -856,11 +856,42 @@ bandit26@bandit:~$
 
 ## Level 26 → Level 27
 
-Test
+Make a new folder to clone the git-repo and cd into it.
 
 ```
+bandit27@bandit:~$ mkdir /tmp/bandit27
+bandit27@bandit:~$ cd /tmp/bandit27
+bandit27@bandit:/tmp/bandit27$
+```
+
+Clone the `git` repo using bandit27's password.
 
 ```
+andit27@bandit:/tmp/bandit27$ git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+Cloning into 'repo'...
+Could not create directory '/home/bandit27/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit27/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit27-git@localhost's password:
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (3/3), 288 bytes | 0 bytes/s, done.
+bandit27@bandit:/tmp/bandit27$
+```
+
+`cd` into the directory `repo` and `cat` the `README` file. to get the password.
+
+```
+bandit27@bandit:/tmp/bandit27/repo$ cat README
+The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
+bandit27@bandit:/tmp/bandit27/repo$
+```
+
 
 ## Level 27 → Level 28
 ## Level 28 → Level 29
