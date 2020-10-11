@@ -983,16 +983,242 @@ bandit28@bandit:/tmp/bandit28/repo$
 
 ## Level 29 → Level 30
 
-Test
+Same as above.
 
 ```
+bandit29@bandit:~$ mkdir /tmp/bandit29; cd /tmp/bandit29
+bandit29@bandit:/tmp/bandit29$ git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
+Cloning into 'repo'...
+Could not create directory '/home/bandit29/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit29/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit29-git@localhost's password:
+remote: Counting objects: 16, done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 16 (delta 2), reused 0 (delta 0)
+Receiving objects: 100% (16/16), 1.43 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (2/2), done.
+bandit29@bandit:/tmp/bandit29$ cd repo/; cat README.md
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: <no passwords in production!>
+
+bandit29@bandit:/tmp/bandit29/repo$
 ```
 
+Let's list all branches.
+
+```
+bandit29@bandit:/tmp/bandit29/repo$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/dev
+  remotes/origin/master
+  remotes/origin/sploits-dev
+bandit29@bandit:/tmp/bandit29/repo$
+```
+
+Switch to `dev`.
+
+```
+bandit29@bandit:/tmp/bandit29/repo$ git checkout -b dev
+Switched to a new branch 'dev'
+bandit29@bandit:/tmp/bandit29/repo$
+```
+
+Now pull `dev` from `origin`.
+
+```
+bandit29@bandit:/tmp/bandit29/repo$ git pull origin dev
+Could not create directory '/home/bandit29/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit29/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit29-git@localhost's password:
+From ssh://localhost/home/bandit29-git/repo
+ * branch            dev        -> FETCH_HEAD
+Updating 208f463..bc83328
+Fast-forward
+ README.md         | 2 +-
+ code/gif2ascii.py | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 code/gif2ascii.py
+bandit29@bandit:/tmp/bandit29/repo$
+```
+
+Let's see the `README.md` now.
+
+```
+bandit29@bandit:/tmp/bandit29/repo$ cat README.md
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: 5b90576bedb2cc04c86a9e924ce42faf
+
+bandit29@bandit:/tmp/bandit29/repo$
+```
 
 ## Level 30 → Level 31
 
+Same as above.
+
+```
+bandit30@bandit:~$ mkdir /tmp/bandit30; cd /tmp/bandit30
+bandit30@bandit:/tmp/bandit30$ git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+Cloning into 'repo'...
+Could not create directory '/home/bandit30/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit30/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit30-git@localhost's password:
+remote: Counting objects: 4, done.
+remote: Total 4 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (4/4), done.
+bandit30@bandit:/tmp/bandit30$ cd repo/
+bandit30@bandit:/tmp/bandit30/repo$ cat README.md
+just an epmty file... muahaha
+bandit30@bandit:/tmp/bandit30/repo$
+```
+
+`git tag` might help to find a little secret.
+
+```
+bandit30@bandit:/tmp/bandit30/repo$ git tag -l
+l
+secret
+bandit30@bandit:/tmp/bandit30/repo$
+```
+
+Using `git show` we can retrieve the password from the tag message.
+
+```
+bandit30@bandit:/tmp/bandit30/repo$ git show secret
+47e603bb428404d265f59c42920d81e5
+bandit30@bandit:/tmp/bandit30/repo$
+```
 
 ## Level 31 → Level 32
 
+Same as above.
+
+```
+bandit31@bandit:~$ mkdir /tmp/bandit31; cd /tmp/bandit31
+bandit31@bandit:/tmp/bandit31$ git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
+Cloning into 'repo'...
+Could not create directory '/home/bandit31/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit31/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit31-git@localhost's password:
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (4/4), done.
+bandit31@bandit:/tmp/bandit31$ cd repo
+bandit31@bandit:/tmp/bandit31/repo$ cat README.md
+This time your task is to push a file to the remote repository.
+
+Details:
+    File name: key.txt
+    Content: 'May I come in?'
+    Branch: master
+
+bandit31@bandit:/tmp/bandit31/repo$
+```
+
+Let's create the file.
+
+`bandit31@bandit:/tmp/bandit31/repo$ echo 'May I come in?' > key.txt`
+
+Now we need to `add` and `commit`.
+
+```
+bandit31@bandit:/tmp/bandit31/repo$ git add -f key.txt
+bandit31@bandit:/tmp/bandit31/repo$ git commit -m ":)"
+[master b979cfd] :)
+ 1 file changed, 1 insertion(+)
+ create mode 100644 key.txt
+```
+
+Push.
+
+```
+bandit31@bandit:/tmp/bandit31/repo$ git push
+Could not create directory '/home/bandit31/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit31/.ssh/known_hosts).
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+bandit31-git@localhost's password:
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 315 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: ### Attempting to validate files... ####
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:
+remote: Well done! Here is the password for the next level:
+remote: 56a9bf19c63d650ce78e6ec0354ee45e
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:
+To ssh://localhost/home/bandit31-git/repo
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'ssh://bandit31-git@localhost/home/bandit31-git/repo'
+bandit31@bandit:/tmp/bandit31/repo$
+```
 
 ## Level 32 → Level 33
+
+Another escape. Just `$0` into the uppershell to spawn `sh`.
+We can then `cat` the password for the next level.
+
+```
+...
+WELCOME TO THE UPPERCASE SHELL
+>> $0
+$ cat /etc/bandit_pass/bandit33
+c9c3199ddf4121b10cf581a98d51caee
+$
+```
+
+## Level 33
+
+Congratz.
+
+```
+bandit33@bandit:~$ cat README.txt
+Congratulations on solving the last level of this game!
+
+At this moment, there are no more levels to play in this game. However, we are constantly working
+on new levels and will most likely expand this game with more levels soon.
+Keep an eye out for an announcement on our usual communication channels!
+In the meantime, you could play some of our other wargames.
+
+If you have an idea for an awesome new level, please let us know!
+bandit33@bandit:~$
+```
