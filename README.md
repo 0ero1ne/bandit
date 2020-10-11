@@ -59,7 +59,7 @@ pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 We are looking for a human-readble file, most likely a ASCII file.  
 Using `find` combined with `file` will output the type of each file we found, 
 then we can `grep ASCII` to parse only the file-type we are looking for and 
-pipe it to `cat` to see its content.
+pipe it to `cat` to see its content.  
 This is a oneline solution but can be done in different steps.
 
 ```
@@ -69,33 +69,43 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 
 ## Level 5 → Level 6
 
+Follwing the same concept as before we can use find, but, this time we are going to filter 
+permissions using `-perm -u-x` and the size `-size 1033c`.  
+At the end just execute the `cat` command to output the content.
+
+
+```
+find inhere/ -type f -perm -u-x -size 1033c -exec cat {} \;
+```
+
+## Level 6 → Level 7
 
 
 
 
-
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
-## Level 4 → Level 5
+## Level 7 → Level 8
+## Level 8 → Level 9
+## Level 9 → Level 10
+## Level 10 → Level 11
+## Level 11 → Level 12
+## Level 12 → Level 13
+## Level 13 → Level 14
+## Level 14 → Level 15
+## Level 15 → Level 16
+## Level 16 → Level 17
+## Level 17 → Level 18
+## Level 18 → Level 19
+## Level 19 → Level 20
+## Level 20 → Level 21
+## Level 21 → Level 22
+## Level 22 → Level 23
+## Level 23 → Level 24
+## Level 24 → Level 25
+## Level 25 → Level 26
+## Level 26 → Level 27
+## Level 27 → Level 28
+## Level 28 → Level 29
+## Level 29 → Level 30
+## Level 30 → Level 31
+## Level 31 → Level 32
+## Level 32 → Level 33
