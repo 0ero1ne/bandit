@@ -684,8 +684,7 @@ bandit21@bandit:~$
 
 ## Level 23 → Level 24
 
-The description for this level requires you to write your own script, but, it won't be necessary.
-
+The description for this level says you have to write your own script, but it won't be necessary.
 
 ```
 bandit22@bandit:~$ ls -al /etc/cron.d/
